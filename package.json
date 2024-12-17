@@ -1,5 +1,6 @@
 {
-  "name": "new-app",
+  "name": "chef-leo",
+  "license": "MIT",
   "homepage": "https://msameer10.github.io/chef-leo/",
   "version": "0.1.0",
   "private": true,

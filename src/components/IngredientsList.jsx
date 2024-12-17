@@ -7,6 +7,8 @@ export default function IngredientsList(props) {
     return (
         <section className="container mt-4">
             <h4>Ingredients on hand:</h4>
+            <p className="mt-4">Add atleast <i><b>four ingredients</b></i> to be able to generate a recipe. <br />
+                {props.ingredients.length > 3 && <small>Feel free to add more ingredients if you want!</small>}</p>
                 <ul className="ingredients-list container" aria-live="polite">
                     {ingredientsListItems}
                 </ul>
