@@ -4,6 +4,7 @@ import Recipe from "./Recipe"
 import IngredientsList from "./IngredientsList"
 import { getRecipeFromMistral } from "../ai"
 import MessageIngredients from "./MessageIngredients"
+import Loader from "./Loader"
 
 export default function Main() {
     const [ingredients, setIngredients] = React.useState([])
@@ -36,7 +37,7 @@ export default function Main() {
             {ingredients.length > 0 && 
                 <IngredientsList ingredients = {ingredients} getRecipe = {getRecipe} loading = {loading} recipe = {recipe} />}
 
-            {loading &&  <div className="text-center"><div className="loading-spinner"></div>Loading...</div> }
+            {loading &&  <Loader loading={loading} /> }
             {!loading && recipe && 
                 <div id="recipe-section">
                     <Recipe recipe={recipe} />
