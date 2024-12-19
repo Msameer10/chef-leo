@@ -4,20 +4,20 @@ const SYSTEM_PROMPT = `
 You are an assistant that receives a list of ingredients that a user has and suggests a recipe they could make with some or all of those ingredients. 
 You don't need to use every ingredient they mention in your recipe. The recipe can include additional ingredients they didn't mention, but try not to include too many extra ingredients. 
 Format your response in markdown to make it easier to render to a web page.
-Start your response by saying "I wound recommed..."
+Start your response by saying "I wound recommed..." and also mention if it belongs to any cuisine.
 `
 
 // for HF_ACCESS_TOKEN
 const hf = new HfInference(process.env.REACT_APP_HF_ACCESS_TOKEN)
 
-export async function getRecipeFromMistral(ingredientsArr) {
+export async function getRecipeFromMistral(ingredientsArr, cuisine) {
     const ingredientsString = ingredientsArr.join(", ")
     try {
         const response = await hf.chatCompletion({
             model: "mistralai/Mixtral-8x7B-Instruct-v0.1",
             messages: [
                 { role: "system", content: SYSTEM_PROMPT },
-                { role: "user", content: `I have ${ingredientsString}. Please give me a recipe you'd recommend I make!` },
+                { role: "user", content: `I have ${ingredientsString}. Please give me a recipe you'd recommend I make!, maybe that belongs in ${cuisine} cuisine, if possible` },
             ],
             max_tokens: 1024,
         })
