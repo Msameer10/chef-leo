@@ -20,6 +20,7 @@ export default function Main() {
         const generatedRecipe = await getRecipeFromMistral(ingredients, cuisine)
         setRecipe(generatedRecipe)
         setLoading(false)
+        setCuisine("")
     }
 
     function addIngredient(formData) {
@@ -54,7 +55,6 @@ export default function Main() {
             {error && <p className="error-message container text-center">{error}</p>}
             {ingredients.length > 0 && 
                 <IngredientsList ingredients = {ingredients} getRecipe = {getRecipe} loading = {loading} recipe = {recipe} />}
-
             {loading &&  <Loader loading={loading} /> }
             {!loading && recipe && 
                 <div id="recipe-section">

@@ -43,7 +43,7 @@ export default function Loader({ loading }) {
     }, [loading])
 
     return (
-        <div className="text-center mt-4">
+        <div className="text-center mt-5">
             <div className="loading-dots">
                 <div></div>
                 <div></div>
