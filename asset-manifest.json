@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/chef-leo/static/css/main.e6c13ad2.css",
-    "main.js": "/chef-leo/static/js/main.03f3f318.js",
+    "main.js": "/chef-leo/static/js/main.97fbe279.js",
     "index.html": "/chef-leo/index.html",
     "main.e6c13ad2.css.map": "/chef-leo/static/css/main.e6c13ad2.css.map",
-    "main.03f3f318.js.map": "/chef-leo/static/js/main.03f3f318.js.map"
+    "main.97fbe279.js.map": "/chef-leo/static/js/main.97fbe279.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.03f3f318.js"
+    "static/js/main.97fbe279.js"
   ]
 }
